@@ -1,4 +1,5 @@
 # DB設計
+*This design is from the planning phase. It is subject to change.*
 ## appdata_db
 ```mermaid
 erDiagram
@@ -132,11 +133,11 @@ erDiagram
 
   tatsum_cdj_kanji_mod {
     serial id PK
-    varchar level_for_kanji_and_signs_for_international_students
+    integer level_for_kanji_and_signs_for_international_students
     integer ranking_for_kanji_and_signs_for_international_students
-    varchar level_for_kanji_and_signs_for_general_learners
+    integer level_for_kanji_and_signs_for_general_learners
     integer ranking_for_kanji_and_signs_for_general_learners
-    varchar level_for_kanji_and_signs_in_written_japanese
+    integer level_for_kanji_and_signs_in_written_japanese
     integer u_ranking_for_kanji_and_signs_in_written_japanese
     integer overall_freq_ranking
     integer fw_ranking_for_kanji_and_signs
@@ -177,10 +178,7 @@ erDiagram
     float if_freq_per_million
     integer if_freq_ranking
     integer id_for_home_position
-    varchar ranking_by_freq_in_category
-    integer level_for_kanji_and_signs_for_international_students_i
-    integer level_for_kanji_and_signs_for_general_learners
-    integer level_for_kanji_and_signs_in_written_japanese
+    integer ranking_by_freq_in_category
   }
 
   tatsum_vdrj {
@@ -220,11 +218,11 @@ erDiagram
 
   tatsum_vdrj_mod {
     serial id PK
-    varchar word_level_for_international_students
+    integer word_level_for_international_students
     integer word_ranking_for_international_students
-    varchar word_level_for_general_learners
+    integer word_level_for_general_learners
     integer word_ranking_for_general_learners
-    varchar word_level_for_written_japanese
+    integer word_level_for_written_japanese
     integer u_ranking_for_written_japanese_excluding_assumed_known_words
     integer old_jlpt_level
     integer specificity_level_in_humanities_and_arts_ha
@@ -252,8 +250,5 @@ erDiagram
     float st_freq_per_million
     float bm_freq_per_million
     float oc_freq_per_million
-    integer word_level_for_international_students_i
-    integer word_level_for_general_learners_i
-    integer word_level_for_written_japanese_i
   }
 ```
