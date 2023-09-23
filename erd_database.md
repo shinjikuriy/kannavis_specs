@@ -17,12 +17,13 @@ erDiagram
   joyokanji_mod {
     serial id PK
     char(1) grapheme_orth
-    char(1) grapheme_var
+    char(1) grapheme_alt
     char(1)[] grapheme_olds
-    char(1) radical
+    char(1)[] radicals
     integer stroke_count
     integer grade
     integer added_year
+    integer removed_year
     varchar[] onyomis
     varchar[] kunyomis
   }
@@ -56,18 +57,18 @@ erDiagram
 
   mifune_kanjidict_mod {
     serial id PK
-    char(1) kanji
+    char(1) grapheme
     char(1) radical
-    char(1) radvar
-    char(1) phonetic
+    char(1) radical_variant
+    char(1) phonetic_component
     varchar idc
     varchar classification
-    varchar[] reg_ons
-    varchar[] reg_kuns
+    varchar[] joyo_onyomis
+    varchar[] joyo_kunyomis
     varchar[] onyomis
     varchar[] kunyomis
     varchar[] nanoris
-    integer strokes
+    integer stroke_count
     varchar grade
     varchar jlpt
     varchar kanken
@@ -233,7 +234,7 @@ erDiagram
     varchar word_tier_label
     varchar lexeme
     varchar standard_newspaper_orthography
-    varchar standard_reading_katakana
+    varchar standard_reading
     varchar part_of_speech
     varchar word_origin_type
     varchar magazine_forms
